@@ -64,7 +64,7 @@ In the `middleware/index.js` file, locate the function called `checkJwt`. We wil
 AUTH0_IDENTITY=my-express-app
 ```
 
-2. Notice the `AUTH0_DOMAIN` variable. This is the domain associated with your account. This one is a little harder to find. Essentially... it's your your tenant id (from Auth0) followed by `.us.auth0.com`. You can find the tenant ID to the left of your profile in the upper right-hand corner of the Auth0 page (when signed in). So for example if your tenant id is "dev-t4vriwms" then your domain will be "dev-t4vriwms.us.auth0.com". You likely did this in the setup steps but if now, make sure to add this to the `.env` file as well. It will now look like this:
+2. Notice the `AUTH0_DOMAIN` variable. This is the domain associated with your account. This one is a little harder to find. Essentially... it's your your tenant id (from Auth0) followed by `.us.auth0.com`. You can find the tenant ID to the left of your profile in the upper right-hand corner of the Auth0 page (when signed in). So for example if your tenant id is "dev-t4vriwms" then your domain will be "dev-t4vriwms.us.auth0.com". You likely did this in the setup steps but if not, make sure to add this to the `.env` file as well. It will now look like this:
 
 ```yaml
 AUTH0_IDENTITY=my-express-app
@@ -112,7 +112,7 @@ Execute the request and notice that you are allowed to add users again and see a
 
 Ok so we now have protected routes and some users can access them if they have the appropriate token but where do they get that token from? We need to create a workflow that sends back a token when a user logs in. We need to do that by calling an Auth0 endpoint during the login endpoint.
 
-Find the "login" function in [controllers/auth.js](./controllers/auth.js). You'll see that the call the the Auth0 endpoint is mostly complete but we still need to do a few things.
+Find the "login" function in [controllers/auth.js](./controllers/auth.js). You'll see that the call to the Auth0 endpoint is mostly complete but we still need to do a few things.
 
 1. Set the default directory on your Auth0 account to "Username-Password-Authentication". You can do this by clicking on your profile icon in the top right corner of your dashboard and selecting "Settings". On the settings page scroll down to "API Authorization Settings" -> "Default Directory".
 
